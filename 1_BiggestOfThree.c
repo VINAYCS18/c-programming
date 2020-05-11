@@ -11,15 +11,15 @@ void main()
     {
         if (num1 > num3)
         {
-            printf("num1 is the greatest among three \n");
+            printf("%d is the greatest among three \n",num1);
         }
         else
         {
-            printf("num3 is the greatest among three \n");
+            printf("%d is the greatest among three \n",num3);
         }
     }
     else if (num2 > num3)
-        printf("num2 is the greatest among three \n");
+        printf("%d is the greatest among three \n,num2");
     else
-        printf("num3 is the greatest among three \n");
+        printf("%d is the greatest among three \n,num3");
 }
