@@ -1,0 +1,31 @@
+#include <stdio.h>
+
+void main()
+{
+    int marks[5][3];
+    for(int i =0;i<5;i++){
+        for(int j =0;j<3;j++){
+            printf("Enter marks of student %d subject %d ",(i+1),(j+1));
+            scanf("%d",&marks[i][j]);
+        }
+    }
+    int max1 =0;
+    int max2 =0;
+    int max3 =0;
+    for(int i =0;i<5;i++){
+        if(max1<marks[i][0]){
+            max1 = marks[i][0];
+        }
+        if(max2<marks[i][1]){
+            max2 = marks[i][1];
+        }
+        if(max3<marks[i][2]){
+            max3 = marks[i][2];
+        }
+    }
+    printf("Maximum marks in subject 1 is %d\n",max1);
+    printf("Maximum marks in subject 2 is %d\n",max2);
+    printf("Maximum marks in subject 3 is %d\n",max3);
+
+
+}
