@@ -1,37 +1,41 @@
-#include <stdio.h>
-
-int binarySearch(int arr[], int l, int r, int x)
-{
-	if (r >= l) {
-		int mid = l + (r - l) / 2;
-
-		if (arr[mid] == x)
-			return mid;
-
-		if (arr[mid] > x)
-			return binarySearch(arr, l, mid - 1, x);
-
-		return binarySearch(arr, mid + 1, r, x);
-	}
-
-	return -1;
-}
-
+#include<stdio.h>
+#include<conio.h>
 void main()
-{   int n;
-    printf("Enter size of array ");
+{
+     
+    int a[10],i,n,item,flag=0,low,high,mid;
+    clrscr();
+    printf("\n  Enter the size of an array: ");
     scanf("%d",&n);
-	int arr[n];
-	printf("Enter array elements ");
-    for(int i =0;i<n;i++){
-        scanf("%d",&arr[i]);
+     
+    printf("\n  Enter the elements in ascending order: ");
+    for(i=0;i<n;i++)
+    {
+        scanf("%d",&a[i]);
     }
-    printf("Enter key to search ");
-	int x;
-	scanf("%d",&x);
-	int result = binarySearch(arr, 0, n - 1, x);
-	(result == -1) ? printf("Element is not present in array")
-				: printf("Element is present at index %d",
-							result);
-
+     
+    printf("\n  Enter the number to be search: ");
+    scanf("%d",&item);
+     
+    low=0,high=n-1;
+    while(low<=high)
+    {
+        mid=(low+high)/2;
+        if(item==a[mid])
+        {
+            flag=1;
+            break;
+        }
+        else if(item<a[mid])
+        {
+            high=mid-1;
+        }
+        else
+        low=mid+1;
+    }
+    if(flag==0)
+    printf("\n  The number is not found");
+    else
+    printf("\n  The number is found and its position is: %d",mid+1);
+    getch();
 }
